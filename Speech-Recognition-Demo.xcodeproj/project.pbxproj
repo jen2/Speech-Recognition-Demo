@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BC617FD1E68CA5000519D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC617FC1E68CA5000519D15 /* AppDelegate.swift */; };
+		4BC617FF1E68CA5000519D15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC617FE1E68CA5000519D15 /* ViewController.swift */; };
+		4BC618021E68CA5000519D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC618001E68CA5000519D15 /* Main.storyboard */; };
+		4BC618041E68CA5000519D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC618031E68CA5000519D15 /* Assets.xcassets */; };
+		4BC618071E68CA5000519D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC618051E68CA5000519D15 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4BC617F91E68CA5000519D15 /* Speech-Recognition-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speech-Recognition-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BC617FC1E68CA5000519D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4BC617FE1E68CA5000519D15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4BC618011E68CA5000519D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4BC618031E68CA5000519D15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4BC618061E68CA5000519D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4BC618081E68CA5000519D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BC617F61E68CA5000519D15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BC617F01E68CA5000519D15 = {
+			isa = PBXGroup;
+			children = (
+				4BC617FB1E68CA5000519D15 /* Speech-Recognition-Demo */,
+				4BC617FA1E68CA5000519D15 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BC617FA1E68CA5000519D15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BC617F91E68CA5000519D15 /* Speech-Recognition-Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BC617FB1E68CA5000519D15 /* Speech-Recognition-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				4BC617FC1E68CA5000519D15 /* AppDelegate.swift */,
+				4BC617FE1E68CA5000519D15 /* ViewController.swift */,
+				4BC618001E68CA5000519D15 /* Main.storyboard */,
+				4BC618031E68CA5000519D15 /* Assets.xcassets */,
+				4BC618051E68CA5000519D15 /* LaunchScreen.storyboard */,
+				4BC618081E68CA5000519D15 /* Info.plist */,
+			);
+			path = "Speech-Recognition-Demo";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BC617F81E68CA5000519D15 /* Speech-Recognition-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BC6180B1E68CA5000519D15 /* Build configuration list for PBXNativeTarget "Speech-Recognition-Demo" */;
+			buildPhases = (
+				4BC617F51E68CA5000519D15 /* Sources */,
+				4BC617F61E68CA5000519D15 /* Frameworks */,
+				4BC617F71E68CA5000519D15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Speech-Recognition-Demo";
+			productName = "Speech-Recognition-Demo";
+			productReference = 4BC617F91E68CA5000519D15 /* Speech-Recognition-Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BC617F11E68CA5000519D15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Jennifer A Sipila";
+				TargetAttributes = {
+					4BC617F81E68CA5000519D15 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HUSBP9Y42K;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4BC617F41E68CA5000519D15 /* Build configuration list for PBXProject "Speech-Recognition-Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4BC617F01E68CA5000519D15;
+			productRefGroup = 4BC617FA1E68CA5000519D15 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BC617F81E68CA5000519D15 /* Speech-Recognition-Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BC617F71E68CA5000519D15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC618071E68CA5000519D15 /* LaunchScreen.storyboard in Resources */,
+				4BC618041E68CA5000519D15 /* Assets.xcassets in Resources */,
+				4BC618021E68CA5000519D15 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BC617F51E68CA5000519D15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC617FF1E68CA5000519D15 /* ViewController.swift in Sources */,
+				4BC617FD1E68CA5000519D15 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4BC618001E68CA5000519D15 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BC618011E68CA5000519D15 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4BC618051E68CA5000519D15 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BC618061E68CA5000519D15 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4BC618091E68CA5000519D15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4BC6180A1E68CA5000519D15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BC6180C1E68CA5000519D15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HUSBP9Y42K;
+				INFOPLIST_FILE = "Speech-Recognition-Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jennifersipila.Speech-Recognition-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4BC6180D1E68CA5000519D15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HUSBP9Y42K;
+				INFOPLIST_FILE = "Speech-Recognition-Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jennifersipila.Speech-Recognition-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BC617F41E68CA5000519D15 /* Build configuration list for PBXProject "Speech-Recognition-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC618091E68CA5000519D15 /* Debug */,
+				4BC6180A1E68CA5000519D15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BC6180B1E68CA5000519D15 /* Build configuration list for PBXNativeTarget "Speech-Recognition-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC6180C1E68CA5000519D15 /* Debug */,
+				4BC6180D1E68CA5000519D15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4BC617F11E68CA5000519D15 /* Project object */;
+}
