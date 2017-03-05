@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B37883C1E69D72200EB2DB0 /* SpeechDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B37883B1E69D72200EB2DB0 /* SpeechDetectionViewController.swift */; };
 		4BC617FD1E68CA5000519D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC617FC1E68CA5000519D15 /* AppDelegate.swift */; };
-		4BC617FF1E68CA5000519D15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC617FE1E68CA5000519D15 /* ViewController.swift */; };
 		4BC618021E68CA5000519D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC618001E68CA5000519D15 /* Main.storyboard */; };
 		4BC618041E68CA5000519D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC618031E68CA5000519D15 /* Assets.xcassets */; };
 		4BC618071E68CA5000519D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC618051E68CA5000519D15 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B37883B1E69D72200EB2DB0 /* SpeechDetectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechDetectionViewController.swift; sourceTree = "<group>"; };
 		4BC617F91E68CA5000519D15 /* Speech-Recognition-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speech-Recognition-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC617FC1E68CA5000519D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BC617FE1E68CA5000519D15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4BC618011E68CA5000519D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BC618031E68CA5000519D15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BC618061E68CA5000519D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC617FC1E68CA5000519D15 /* AppDelegate.swift */,
-				4BC617FE1E68CA5000519D15 /* ViewController.swift */,
+				4B37883B1E69D72200EB2DB0 /* SpeechDetectionViewController.swift */,
 				4BC618001E68CA5000519D15 /* Main.storyboard */,
 				4BC618031E68CA5000519D15 /* Assets.xcassets */,
 				4BC618051E68CA5000519D15 /* LaunchScreen.storyboard */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC617FF1E68CA5000519D15 /* ViewController.swift in Sources */,
+				4B37883C1E69D72200EB2DB0 /* SpeechDetectionViewController.swift in Sources */,
 				4BC617FD1E68CA5000519D15 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +261,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HUSBP9Y42K;
 				INFOPLIST_FILE = "Speech-Recognition-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jennifersipila.Speech-Recognition-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,6 +275,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HUSBP9Y42K;
 				INFOPLIST_FILE = "Speech-Recognition-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jennifersipila.Speech-Recognition-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +302,7 @@
 				4BC6180D1E68CA5000519D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
