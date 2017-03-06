@@ -15,16 +15,18 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var startButton: UIButton!
     
-    let audioEngine = AVAudioEngine() //Will process the audio stream, we'll get updates from this when the mic receives audio.
-    let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US")) //Recognizes the speech, this can fail and return nil, so it should be optional
-    let request = SFSpeechAudioBufferRecognitionRequest() //Allocates speech as the user speaks, since we don't have the complete audio file.
-    var recognitionTask: SFSpeechRecognitionTask? //Manages, cancels, or stops current recognition task.
+    let audioEngine = AVAudioEngine()
+    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
+    let request = SFSpeechAudioBufferRecognitionRequest()
+    var recognitionTask: SFSpeechRecognitionTask?
     var isRecording = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestSpeechAuthorization()
     }
+    
+//MARK: IBActions and Cancel
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
         if isRecording == true {
@@ -46,51 +48,29 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
         }
         recognitionTask?.cancel()
     }
-
-//MARK: - Authorization
     
-    func requestSpeechAuthorization() {
-        SFSpeechRecognizer.requestAuthorization { authStatus in
-            OperationQueue.main.addOperation {
-                switch authStatus {
-                case .authorized:
-                    self.startButton.isEnabled = true
-                case .denied:
-                    self.startButton.isEnabled = false
-                    self.detectedTextLabel.text = "User denied access to speech recognition"
-                case .restricted:
-                    self.startButton.isEnabled = false
-                    self.detectedTextLabel.text = "Speech recognition restricted on this device"
-                case .notDetermined:
-                    self.startButton.isEnabled = false
-                    self.detectedTextLabel.text = "Speech recognition not yet authorized"
-                }
-            }
-        }
-    }
-
 //MARK: - Recognize Speech
 
     func recordAndRecognizeSpeech() {
-        // Setup audio engine and speech recognizer
         guard let node = audioEngine.inputNode else { return }
         let recordingFormat = node.outputFormat(forBus: 0)
         node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
             self.request.append(buffer)
         }
-        // Prepare and start recording
         audioEngine.prepare()
         do {
             try audioEngine.start()
         } catch {
+            self.sendAlert(message: "There has been an audio engine error.")
             return print(error)
         }
         guard let myRecognizer = SFSpeechRecognizer() else {
-            // A recognizer is not supported for the current locale
+            self.sendAlert(message: "Speech recognition is not supported for your current locale.")
             return
         }
         if !myRecognizer.isAvailable {
-            // The recognizer is not available right now
+            self.sendAlert(message: "Speech recognition is not currently available. Check back at a later time.")
+            // Recognizer is not available right now
             return
         }
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
@@ -106,10 +86,33 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
                 }
                 self.checkForColorsSaid(resultString: lastString)
             } else if let error = error {
+                self.sendAlert(message: "There has been a speech recognition error.")
                 print(error)
             }
         })
     }
+    
+//MARK: - Check Authorization Status
+
+func requestSpeechAuthorization() {
+    SFSpeechRecognizer.requestAuthorization { authStatus in
+        OperationQueue.main.addOperation {
+            switch authStatus {
+            case .authorized:
+                self.startButton.isEnabled = true
+            case .denied:
+                self.startButton.isEnabled = false
+                self.detectedTextLabel.text = "User denied access to speech recognition"
+            case .restricted:
+                self.startButton.isEnabled = false
+                self.detectedTextLabel.text = "Speech recognition restricted on this device"
+            case .notDetermined:
+                self.startButton.isEnabled = false
+                self.detectedTextLabel.text = "Speech recognition not yet authorized"
+            }
+        }
+    }
+}
     
 //MARK: - UI / Set view color.
     
@@ -135,5 +138,13 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
             colorView.backgroundColor = UIColor.gray
         default: break
         }
+    }
+    
+//MARK: - Alert
+    
+    func sendAlert(message: String) {
+        let alert = UIAlertController(title: "Speech Recognizer Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
