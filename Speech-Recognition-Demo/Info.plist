@@ -7,7 +7,7 @@
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Speak and watch your words become text or say a color to see the grey box change colors.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Speak and watch your words become text or say a color to see the grey box change colors.</string>
+	<string>Your speech will be detected after tapping the start button.</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
