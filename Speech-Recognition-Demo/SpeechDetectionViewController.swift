@@ -30,8 +30,7 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
         if isRecording == true {
-            audioEngine.stop()
-            recognitionTask?.cancel()
+            cancelRecording()
             isRecording = false
             startButton.backgroundColor = UIColor.gray
         } else {
@@ -42,17 +41,19 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     }
     
     func cancelRecording() {
+        recognitionTask?.finish()
+        recognitionTask = nil
+        
+        // stop audio
+        request.endAudio()
         audioEngine.stop()
-        if let node = audioEngine.inputNode {
-            node.removeTap(onBus: 0)
-        }
-        recognitionTask?.cancel()
+        audioEngine.inputNode.removeTap(onBus: 0)
     }
     
 //MARK: - Recognize Speech
 
     func recordAndRecognizeSpeech() {
-        guard let node = audioEngine.inputNode else { return }
+        let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
         node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
             self.request.append(buffer)
@@ -143,8 +144,8 @@ func requestSpeechAuthorization() {
 //MARK: - Alert
     
     func sendAlert(message: String) {
-        let alert = UIAlertController(title: "Speech Recognizer Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Speech Recognizer Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }
