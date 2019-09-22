@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					4BC617F81E68CA5000519D15 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = KAPU6UC8W2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -259,11 +260,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KAPU6UC8W2;
 				INFOPLIST_FILE = "Speech-Recognition-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jennifersipila.Speech-Recognition-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jennifersipila.Speech-Recognition-Demo-Latest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -273,11 +274,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KAPU6UC8W2;
 				INFOPLIST_FILE = "Speech-Recognition-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jennifersipila.Speech-Recognition-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jennifersipila.Speech-Recognition-Demo-Latest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

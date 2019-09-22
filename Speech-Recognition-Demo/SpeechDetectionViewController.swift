@@ -1,11 +1,3 @@
-//
-//  SpeechDetectionViewController.swift
-//  Speech-Recognition-Demo
-//
-//  Created by Jennifer A Sipila on 3/3/17.
-//  Copyright © 2017 Jennifer A Sipila. All rights reserved.
-//
-
 import UIKit
 import Speech
 
@@ -26,8 +18,33 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
         self.requestSpeechAuthorization()
     }
     
-//MARK: IBActions and Cancel
+    //MARK: - Colors
+    enum Color: String {
+        case Red, Orange, Yellow, Green, Blue, Purple, Black, Gray
+        
+        var create: UIColor {
+            switch self {
+            case .Red:
+                return UIColor.red
+            case .Orange:
+                return UIColor.orange
+            case .Yellow:
+                return UIColor.yellow
+            case .Green:
+                return UIColor.green
+            case .Blue:
+                return UIColor.blue
+            case .Purple:
+                return UIColor.purple
+            case .Black:
+                return UIColor.black
+            case .Gray:
+                return UIColor.gray
+            }
+        }
+    }
     
+//MARK: IBActions and Cancel
     @IBAction func startButtonTapped(_ sender: UIButton) {
         if isRecording == true {
             cancelRecording()
@@ -51,7 +68,6 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
     }
     
 //MARK: - Recognize Speech
-
     func recordAndRecognizeSpeech() {
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
@@ -62,15 +78,15 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
         do {
             try audioEngine.start()
         } catch {
-            self.sendAlert(message: "There has been an audio engine error.")
+            self.sendAlert(title: "Speech Recognizer Error", message: "There has been an audio engine error.")
             return print(error)
         }
         guard let myRecognizer = SFSpeechRecognizer() else {
-            self.sendAlert(message: "Speech recognition is not supported for your current locale.")
+            self.sendAlert(title: "Speech Recognizer Error", message: "Speech recognition is not supported for your current locale.")
             return
         }
         if !myRecognizer.isAvailable {
-            self.sendAlert(message: "Speech recognition is not currently available. Check back at a later time.")
+            self.sendAlert(title: "Speech Recognizer Error", message: "Speech recognition is not currently available. Check back at a later time.")
             // Recognizer is not available right now
             return
         }
@@ -78,23 +94,20 @@ class SpeechDetectionViewController: UIViewController, SFSpeechRecognizerDelegat
             if let result = result {
                 
                 let bestString = result.bestTranscription.formattedString
-                self.detectedTextLabel.text = bestString
-                
                 var lastString: String = ""
                 for segment in result.bestTranscription.segments {
                     let indexTo = bestString.index(bestString.startIndex, offsetBy: segment.substringRange.location)
-                    lastString = bestString.substring(from: indexTo)
+                    lastString = String(bestString[indexTo...])
                 }
                 self.checkForColorsSaid(resultString: lastString)
             } else if let error = error {
-                self.sendAlert(message: "There has been a speech recognition error.")
+                self.sendAlert(title: "Speech Recognizer Error", message: "There has been a speech recognition error.")
                 print(error)
             }
         })
     }
     
 //MARK: - Check Authorization Status
-
 func requestSpeechAuthorization() {
     SFSpeechRecognizer.requestAuthorization { authStatus in
         OperationQueue.main.addOperation {
@@ -110,41 +123,23 @@ func requestSpeechAuthorization() {
             case .notDetermined:
                 self.startButton.isEnabled = false
                 self.detectedTextLabel.text = "Speech recognition not yet authorized"
+            @unknown default:
+                return
             }
         }
     }
 }
     
 //MARK: - UI / Set view color.
-    
     func checkForColorsSaid(resultString: String) {
-        switch resultString {
-        case "red":
-            colorView.backgroundColor = UIColor.red
-        case "orange":
-            colorView.backgroundColor = UIColor.orange
-        case "yellow":
-            colorView.backgroundColor = UIColor.yellow
-        case "green":
-            colorView.backgroundColor = UIColor.green
-        case "blue":
-            colorView.backgroundColor = UIColor.blue
-        case "purple":
-            colorView.backgroundColor = UIColor.purple
-        case "black":
-            colorView.backgroundColor = UIColor.black
-        case "white":
-            colorView.backgroundColor = UIColor.white
-        case "gray":
-            colorView.backgroundColor = UIColor.gray
-        default: break
-        }
+        guard let color = Color(rawValue: resultString) else { return }
+        colorView.backgroundColor = color.create
+        self.detectedTextLabel.text = resultString
     }
     
 //MARK: - Alert
-    
-    func sendAlert(message: String) {
-        let alert = UIAlertController(title: "Speech Recognizer Error", message: message, preferredStyle: UIAlertController.Style.alert)
+    func sendAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
